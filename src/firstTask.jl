@@ -3,7 +3,9 @@ module firstTask
 # Global variable
 goldenRatio = (1 + sqrt(5)) / 2
 
-# Golden section method to find local minimum value
+"""
+Function optimizes single variable function using golden section method (to find local minimum value in provided range)
+"""
 function goldenSection(f, a, b, tol = 1e-8)
   # Make sure that entered range is correct
   a = min(a, b)
@@ -22,7 +24,8 @@ function goldenSection(f, a, b, tol = 1e-8)
   end
   # Get the approximate value and return it
   result = (a + b) / 2
-  return result
+  resultY = f(result)
+  return (result, resultY)
 end
 
 export goldenSection
